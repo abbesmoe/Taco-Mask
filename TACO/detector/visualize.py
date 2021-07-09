@@ -80,7 +80,7 @@ def apply_mask(image, mask, color, alpha=0.5):
     return image
 
 
-def display_instances(image, boxes, masks, class_ids, class_names,
+def display_instances(image, imagename, boxes, masks, class_ids, class_names,
                       scores=None, title="",
                       figsize=(16, 16), ax=None,
                       show_mask=True, show_bbox=True,
@@ -163,8 +163,8 @@ def display_instances(image, boxes, masks, class_ids, class_names,
             p = Polygon(verts, facecolor="none", edgecolor=color)
             ax.add_patch(p)
     ax.imshow(masked_image.astype(np.uint8))
-    plt.savefig('../../annotated_images/output_{}.jpg'.format(time.strftime("%Y%m%d-%H%M%S")))#to save file in local directory for n no of input images with date and time 
-    
+    plt.savefig('../../annotated_images/annotated_{}.jpg'.format(imagename))
+
    # plt.close()
     #import time
    # if os.path.exists('F:/la/output.jpg'):#to save file in local directory
