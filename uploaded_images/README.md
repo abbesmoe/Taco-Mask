@@ -1,1 +1,1 @@
-Directory to upload original images
+Directory to upload original images.
