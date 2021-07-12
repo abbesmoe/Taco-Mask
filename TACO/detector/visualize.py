@@ -163,7 +163,7 @@ def display_instances(image, imagename, boxes, masks, class_ids, class_names,
             p = Polygon(verts, facecolor="none", edgecolor=color)
             ax.add_patch(p)
     ax.imshow(masked_image.astype(np.uint8))
-    plt.savefig('../../annotated_images/annotated_{}.jpg'.format(imagename))
+    plt.savefig('../../annotated_images/annotated_{}'.format(imagename))
 
    # plt.close()
     #import time
