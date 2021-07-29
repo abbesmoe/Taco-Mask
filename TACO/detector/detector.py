@@ -285,6 +285,8 @@ if __name__ == '__main__':
     elif args.model.lower() == "imagenet":
         # Start from ImageNet trained weights
         model_path = model.get_imagenet_weights()
+    elif args.model.lower() == "taco":
+        model_path = "../../mask_rcnn_taco_0100.h5"
     else:
         _, model_path = model.get_last_checkpoint(args.model)
 
@@ -295,6 +297,8 @@ if __name__ == '__main__':
         model.load_weights(model_path, None, by_name=True, exclude=[
             "mrcnn_class_logits", "mrcnn_bbox_fc",
             "mrcnn_bbox", "mrcnn_mask"])
+    elif args.model.lower() == "taco":
+        model.load_weights(model_path, None, by_name=True)
     else:
         model.load_weights(model_path, model_path, by_name=True)
 
