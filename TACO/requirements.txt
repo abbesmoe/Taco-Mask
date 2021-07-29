@@ -7,3 +7,7 @@ matplotlib
 seaborn
 graphviz
 Cython
+tensorflow-gpu==1.15
+keras==2.1.6
+imgaug
+"git+https://github.com/philferriere/cocoapi.git#egg=pycocotools&subdirectory=PythonAPI"
