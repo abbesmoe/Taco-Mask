@@ -50,7 +50,7 @@ class Config(object):
 
     # Backbone network architecture
     # Supported values are: resnet50, resnet101
-    BACKBONE = "resnet50"
+    BACKBONE = "resnet101"
 
     # Optimizer
     OPTIMIZER = 'SGD'
@@ -135,7 +135,7 @@ class Config(object):
     # enough positive proposals to fill this and keep a positive:negative
     # ratio of 1:3. You can increase the number of proposals by adjusting
     # the RPN NMS threshold.
-    TRAIN_ROIS_PER_IMAGE = 200
+    TRAIN_ROIS_PER_IMAGE = 128
 
     # Percent of positive ROIs used to train classifier/mask heads
     ROI_POSITIVE_RATIO = 0.33
@@ -177,7 +177,7 @@ class Config(object):
     # The Mask RCNN paper uses lr=0.02, but on TensorFlow it causes
     # weights to explode. Likely due to differences in optimzer
     # implementation.
-    LEARNING_RATE = 0.001
+    LEARNING_RATE = 0.01
     LEARNING_MOMENTUM = 0.9
 
     # Weight decay regularization
@@ -207,7 +207,7 @@ class Config(object):
     TRAIN_BN = False  # Defaulting to False since batch size is often small
 
     # Gradient norm clipping
-    GRADIENT_CLIP_NORM = 5.0
+    GRADIENT_CLIP_NORM = 10.0
 
     def __init__(self):
         """Set values of computed attributes."""
