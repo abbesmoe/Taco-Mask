@@ -121,7 +121,7 @@ class Config(object):
 
     # Zooms in on object annotations and crops the image, during training,
     # to make a square image of IMAGE_MAX_DIM x IMAGE_MAX_DIM
-    USE_OBJECT_ZOOM = True
+    USE_OBJECT_ZOOM = False
     ZOOM_IN_FREQ = 0.5
 
     # Make all classes share same mask
