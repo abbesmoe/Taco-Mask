@@ -31,8 +31,6 @@ import keras.engine as KE
 import keras.models as KM
 import utils
 
-from keras.callbacks import LearningRateScheduler
-
 # Requires TensorFlow 1.3+ and Keras 2.0.8+.
 from distutils.version import LooseVersion
 assert LooseVersion(tf.__version__) >= LooseVersion("1.3")
@@ -2372,17 +2370,6 @@ class MaskRCNN():
             self.config.NAME.lower()))
         self.checkpoint_path = self.checkpoint_path.replace(
             "*epoch*", "{epoch:04d}")
-        
-    def scheduler(self, epoch):
-      if epoch > 20 &  epoch <= 40:
-        K.set_value(self.keras_model.optimizer.lr, 0.005)
-      if epoch > 40 &  epoch <= 60:
-        K.set_value(self.keras_model.optimizer.lr, 0.001)
-      if epoch > 60 &  epoch <= 80:
-        K.set_value(self.keras_model.optimizer.lr, 0.0005)
-      if epoch > 80:
-        K.set_value(self.keras_model.optimizer.lr, 0.0001)
-      return K.get_value(self.keras_model.optimizer.lr)
 
     def train(self, train_dataset, val_dataset, learning_rate, epochs, layers,
               augmentation=None):
@@ -2436,14 +2423,12 @@ class MaskRCNN():
         val_generator = data_generator(val_dataset, self.config, shuffle=True,
                                        batch_size=self.config.BATCH_SIZE)
 
-        change_lr = LearningRateScheduler(self.scheduler)
         # Callbacks
         callbacks = [
             keras.callbacks.TensorBoard(log_dir=self.log_dir,
                                         histogram_freq=0, write_graph=True, write_images=False),
             keras.callbacks.ModelCheckpoint(self.checkpoint_path,
                                             verbose=0, save_weights_only=True),
-            change_lr,
         ]
 
         # Train
