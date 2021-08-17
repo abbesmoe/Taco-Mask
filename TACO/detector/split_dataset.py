@@ -14,7 +14,7 @@ parser.add_argument('--nr_trials', type=int, default=10, required=False, help='N
 
 args = parser.parse_args()
 
-ann_input_path = args.dataset_dir + '/' + 'Trash-6.json'
+ann_input_path = args.dataset_dir + '/' + 'annotations.json'
 
 # Load annotations
 with open(ann_input_path, 'r') as f:
