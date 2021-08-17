@@ -1,24 +1,8 @@
-<p align="center">
-<img src="https://raw.githubusercontent.com/wiki/pedropro/TACO/images/logonav.png" width="25%"/>
-</p>
+<h1 align="center">
+Taco Mask
+</h1>
 
-TACO is a growing image dataset of waste in the wild. It contains images of litter taken under
-diverse environments: woods, roads and beaches. These images are manually labeled and segmented
-according to a hierarchical taxonomy to train and evaluate object detection algorithms. Currently,
-images are hosted on Flickr and we have a server that is collecting more images and
-annotations @ [tacodataset.org](http://tacodataset.org)
-
-
-<div align="center">
-  <div class="column">
-    <img src="https://raw.githubusercontent.com/wiki/pedropro/TACO/images/1.png" width="17%" hspace="3">
-    <img src="https://raw.githubusercontent.com/wiki/pedropro/TACO/images/2.png" width="17%" hspace="3">
-    <img src="https://raw.githubusercontent.com/wiki/pedropro/TACO/images/3.png" width="17%" hspace="3">
-    <img src="https://raw.githubusercontent.com/wiki/pedropro/TACO/images/4.png" width="17%" hspace="3">
-    <img src="https://raw.githubusercontent.com/wiki/pedropro/TACO/images/5.png" width="17%" hspace="3">
-  </div>
-</div>
-</br>
+This is a version of our project that still uses tensorflow 1.x. If you would like to view project that uses the lastest version of tensorflow, click [here](https://github.com/abbesmoe/TrashDetection). For the original TACO dataset we implemented, click [here](https://github.com/pedropro/TACO).
 
 For convenience, annotations are provided in COCO format. Check the metadata here:
 http://cocodataset.org/#format-data
